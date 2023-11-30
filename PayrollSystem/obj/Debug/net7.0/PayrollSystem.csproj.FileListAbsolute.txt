@@ -90,6 +90,37 @@ C:\Users\QCU\Downloads\PayrollSystem\PayrollSystem\obj\Debug\net7.0\refint\Payro
 C:\Users\QCU\Downloads\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.pdb
 C:\Users\QCU\Downloads\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.genruntimeconfig.cache
 C:\Users\QCU\Downloads\PayrollSystem\PayrollSystem\obj\Debug\net7.0\ref\PayrollSystem.dll
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\appsettings.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\PayrollSystem.staticwebassets.runtime.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\PayrollSystem.exe
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\PayrollSystem.deps.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\PayrollSystem.runtimeconfig.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\PayrollSystem.dll
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\bin\Debug\net7.0\PayrollSystem.pdb
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.AssemblyInfoInputs.cache
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.AssemblyInfo.cs
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.csproj.CoreCompileInputs.cache
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.RazorAssemblyInfo.cache
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.RazorAssemblyInfo.cs
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets\msbuild.PayrollSystem.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets\msbuild.build.PayrollSystem.props
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.PayrollSystem.props
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.PayrollSystem.props
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\scopedcss\bundle\PayrollSystem.styles.css
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\scopedcss\projectbundle\PayrollSystem.bundle.scp.css
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.dll
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\refint\PayrollSystem.dll
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.pdb
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\PayrollSystem.genruntimeconfig.cache
+C:\Users\QCU\OneDrive\Desktop\New folder\PayrollSystem\PayrollSystem\obj\Debug\net7.0\ref\PayrollSystem.dll
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\bin\Debug\net7.0\appsettings.json
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\bin\Debug\net7.0\PayrollSystem.staticwebassets.runtime.json
@@ -113,6 +144,7 @@ C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\sta
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\scopedcss\bundle\PayrollSystem.styles.css
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\scopedcss\projectbundle\PayrollSystem.bundle.scp.css
 C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\PayrollSystem\obj\Debug\net7.0\PayrollSystem.dll
