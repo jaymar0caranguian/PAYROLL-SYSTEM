@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewData["Title"] = "Position List";
+}
+
+<div class="row">
+    <div class="col-lg-3" style="background-color: #1C1C39;">
+        <img src="~/payroll-logo.png" width="100%" style="margin-top: -50px" />
+
+        <div class="container-fluid" style="margin-top: -30px" align="center">
+            <div class="col-8" align="left">
+                <h5><a href="@Url.Action("Dashboard", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-house"></i> Home</a><br /></h5>
+                <h5><a href="@Url.Action("Attendance", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
+                <h5><a href="@Url.Action("Employees", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
+                <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
+                <h5><a href="@Url.Action("Positions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
+                <h5><a href="@Url.Action("Deductions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-dash-circle"></i> Deduction List</a><br /></h5>
+                <h5><a href="@Url.Action("Reports", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
+                <h5><a href="@Url.Action("ManageUsers", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
+                <br /><br />
+
+                <h5><a href="#" class="text-decoration-none text-white mt-2" data-bs-toggle="modal" data-bs-target="#logout-modal"><i class="bi-box-arrow-left"></i> Logout</a><br /></h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9 bg-light" style="height: 100vh !important">
+        <br /><br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <div class="bg-white p-4 shadow">
+                        <h1>Position Form</h1>
+
+                        <label for="position" class="form-label mt-4">Position</label>
+                        <input type="text" class="form-control" id="position" placeholder="Position" />
+
+                        <hr/>
+                        <button class="btn btn-primary w-100">Save</button>
+                    </div>
+                </div>
+
+                <div class="col-7">
+                    <div class="bg-white p-4 shadow">
+                        <table class="table table-hover border-dark border">
+                            <thead>
+                                <tr>
+                                    <td>Position Name</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Staff/Crew</td>
+                                    <td>
+                                        <button class="btn btn-primary" style="margin-right: 6px;" data-bs-toggle="modal" data-bs-target="#update-position-modal"><i class="bi-pencil-square"></i></button>
+                                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="logout-modal" tabindex="-1" aria-labelledby="logout-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logout-modal-label">Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn btn-danger">Logout</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete-modal-label">Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete this position?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="update-position-modal" tabindex="-1" aria-labelledby="update-position-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="update-position-label">Update Position Details</h5>
+
+                <div class="form-group">
+                    <label for="position-new" class="form-label mt-2">Position</label>
+                    <input type="text" class="form-control" id="position-new" placeholder="Position" value="Staff/Crew" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
