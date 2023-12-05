@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WebApplication4.DataDB;
 using WebApplication4.Models;
 
 namespace WebApplication4.Controllers
@@ -15,6 +16,7 @@ namespace WebApplication4.Controllers
 
         public IActionResult Index()
         {
+            PmsDatabaseContext pmsDatabaseContext = new PmsDatabaseContext();
             return View();
         }
 
