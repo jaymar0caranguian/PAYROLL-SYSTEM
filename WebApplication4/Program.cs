@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication4.DataDB;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add database context configuration
+builder.Services.AddDbContext<PmsDatabaseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

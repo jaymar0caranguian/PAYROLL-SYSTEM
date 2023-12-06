@@ -16,7 +16,6 @@ namespace WebApplication4.Controllers
 
         public IActionResult Index()
         {
-            PmsDatabaseContext pmsDatabaseContext = new PmsDatabaseContext();
             return View();
         }
 
