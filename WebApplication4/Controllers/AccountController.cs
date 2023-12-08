@@ -26,6 +26,9 @@ namespace WebApplication4.Controllers
 
             if (user != null)
             {
+                // Authentication successful, set user's name in TempData
+                TempData["UserName"] = user.Name;
+
                 // Authentication successful, redirect to the Dashboard Razor Page
                 return RedirectToAction("Dashboard", "Pages");
             }
@@ -36,5 +39,6 @@ namespace WebApplication4.Controllers
             // Return to the Index action of the Home controller with the model to display entered username and the error message
             return RedirectToAction("Index", "Home", new { model = model, error = "Invalid username or password." });
         }
+
     }
 }
