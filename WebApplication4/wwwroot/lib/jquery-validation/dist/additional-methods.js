@@ -330,7 +330,7 @@ $.validator.addMethod( "creditcard", function( value, element ) {
 	}
 
 	var nCheck = 0,
-		nDigit = 0,
+		ndigit = 0,
 		bEven = false,
 		n, cDigit;
 
@@ -344,14 +344,14 @@ $.validator.addMethod( "creditcard", function( value, element ) {
 
 	for ( n = value.length - 1; n >= 0; n-- ) {
 		cDigit = value.charAt( n );
-		nDigit = parseInt( cDigit, 10 );
+		ndigit = parseInt( cDigit, 10 );
 		if ( bEven ) {
-			if ( ( nDigit *= 2 ) > 9 ) {
-				nDigit -= 9;
+			if ( ( ndigit *= 2 ) > 9 ) {
+				ndigit -= 9;
 			}
 		}
 
-		nCheck += nDigit;
+		nCheck += ndigit;
 		bEven = !bEven;
 	}
 

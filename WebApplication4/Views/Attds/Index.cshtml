@@ -1,0 +1,150 @@
+﻿@model IEnumerable<WebApplication4.DataDB.Attd>
+
+@{
+    ViewData["Title"] = "Attendance";
+}
+
+<div class="row">
+    <div class="col-lg-3" style="background-color: #1C1C39;">
+        <img src="~/payroll-logo.png" width="100%" style="margin-top: -50px" />
+
+        <div class="container-fluid" style="margin-top: -30px" align="center">
+            <div class="col-8" align="left">
+                <h5><a href="@Url.Action("Dashboard", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-house"></i> Home</a><br /></h5>
+                <h5><a href="@Url.Action("Index","Attds")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "EmpInfoes")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
+                <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
+                <h5><a href="@Url.Action("Positions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
+                <h5><a href="@Url.Action("Deductions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-dash-circle"></i> Deduction List</a><br /></h5>
+                <h5><a href="@Url.Action("Reports", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
+                <h5><a href="@Url.Action("ManageUsers", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
+                <br /><br />
+
+                <h5><a href="#" class="text-decoration-none text-white mt-2" data-bs-toggle="modal" data-bs-target="#logout-modal"><i class="bi-box-arrow-left"></i> Logout</a><br /></h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9 bg-light" style="height: 100vh !important">
+            <br /><br />
+        <div class="container">
+            <div class="bg-white p-4 shadow">
+                <div class="row">
+                    <div class="col-7">
+                        <h1>Attendance</h1>
+                    </div>
+                    <div class="col-5 pt-2 d-inline m-0" align="right">
+                        <div class="row gx-2">
+                            <div class="col-6">
+                                <div class="input-group date w-100" id="datepicker">
+                                    <input type="text" class="form-control" id="date" disabled />
+                                    <span class="input-group-append">
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <a class="btn btn-primary w-100" asp-action="Create">+Add Attendance</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table class="table">
+                                <thead>
+                                    <tr class="text-sm-center" style="font-size:.9em">
+                                        <td>Date</td>
+                                        <td>Employee ID</td>
+                                        <td>Holiday</td>
+                                        <td>Schedule Time</td>
+                                        <td>Time Record</td>
+                                        <td>Night Differential</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm-center">
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Date)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.EmpId)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Holiday)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.St)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Tr)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.nd)
+                                            </td>
+                                            <td>
+                                                <a asp-action="Edit" asp-route-id="@item.AttdId" class="btn btn-success p-2">Edit</a> |
+                                                @*<a asp-action="Details" asp-route-id="@item.AttdId">Details</a> |*@
+                                                <a asp-action="Delete" asp-route-id="@item.AttdId" class="btn btn-danger p-2">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>Showing 1 to 1 of 1 entries</p>
+                            </div>
+
+                            <div class="col-6" align="right">
+                                <a href="#" class="text-decoration-none">Previous</a>
+                                <a href="#" class="btn btn-secondary mx-2">1</a>
+                                <a href="#" class="text-decoration-none">Next</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="logout-modal" tabindex="-1" aria-labelledby="logout-modal-label" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="logout-modal-label">Logout</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to logout?
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/" class="btn btn-danger">Logout</a>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script defer>
+    window.onload = () => {
+        $(function () {
+            $('#date').datepicker();
+        });
+
+        function getTodayDate() {
+            const d = new Date();
+            const f = n => (n < 10 ? '0' : '') + n;
+            return [d.getFullYear(), f(d.getMonth() + 1), f(d.getDate())].join('-');
+        }
+
+        var todayDate = getTodayDate();
+        document.getElementById("date").value = todayDate;
+    };
+</script>

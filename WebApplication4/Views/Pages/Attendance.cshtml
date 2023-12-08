@@ -10,8 +10,8 @@
         <div class="container-fluid" style="margin-top: -30px" align="center">
             <div class="col-8" align="left">
                 <h5><a href="@Url.Action("Dashboard", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-house"></i> Home</a><br /></h5>
-                <h5><a href="@Url.Action("Attendance", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
-                <h5><a href="@Url.Action("Employees", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
+                <h5><a href="@Url.Action("Index","Attds")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "EmpInfoes")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
                 <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
                 <h5><a href="@Url.Action("Positions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
                 <h5><a href="@Url.Action("Deductions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-dash-circle"></i> Deduction List</a><br /></h5>
@@ -23,9 +23,8 @@
             </div>
         </div>
     </div>
-
     <div class="col-lg-9 bg-light" style="height: 100vh !important">
-        <br /><br />
+        <br/><br />
 
         <div class="container">
             <div class="bg-white p-4 shadow">
@@ -38,7 +37,7 @@
                         <div class="row gx-2">
                             <div class="col-6">
                                 <div class="input-group date w-100" id="datepicker">
-                                    <input type="text" class="form-control" id="date" />
+                                    <input type="text" class="form-control" id="date" disabled />
                                     <span class="input-group-append">
                                         <span class="input-group-text bg-light d-block">
                                             <i class="bi-calendar"></i>
@@ -48,7 +47,7 @@
                             </div>
 
                             <div class="col-6">
-                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#new-attendance-modal"><i class="bi-plus"></i> Add Attendance</button>
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#new-attendance-modal"><i class="bi-plus"></i>+Add Attendance</button>
                             </div>
                         </div>
                     </div>
@@ -201,8 +200,18 @@
 </div>
 
 <script defer>
-    window.onload = () =>
+    window.onload = () => {
         $(function () {
-            $('#datepicker').datepicker();
+            $('#date').datepicker();
         });
+
+        function getTodayDate() {
+            const d = new Date();
+            const f = n => (n < 10 ? '0' : '') + n;
+            return [d.getFullYear(), f(d.getMonth() + 1), f(d.getDate())].join('-');
+        }
+
+        var todayDate = getTodayDate();
+        document.getElementById("date").value = todayDate;
+    };
 </script>

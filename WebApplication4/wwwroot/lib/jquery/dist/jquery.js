@@ -717,7 +717,7 @@ var i,
 		setDocument();
 	},
 
-	inDisabledFieldset = addCombinator(
+	indisabledFieldset = addCombinator(
 		function( elem ) {
 			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
 		},
@@ -1055,7 +1055,7 @@ function createDisabledPseudo( disabled ) {
 					// Where there is no isDisabled, check manually
 					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
-					inDisabledFieldset( elem ) === disabled;
+					indisabledFieldset( elem ) === disabled;
 			}
 
 			return elem.disabled === disabled;
@@ -3137,7 +3137,7 @@ var rootjQuery,
 	init = jQuery.fn.init = function( selector, context, root ) {
 		var match, elem;
 
-		// HANDLE: $(""), $(null), $(undefined), $(false)
+		// HAndLE: $(""), $(null), $(undefined), $(false)
 		if ( !selector ) {
 			return this;
 		}
@@ -3162,7 +3162,7 @@ var rootjQuery,
 			// Match html or make sure no context is specified for #id
 			if ( match && ( match[ 1 ] || !context ) ) {
 
-				// HANDLE: $(html) -> $(array)
+				// HAndLE: $(html) -> $(array)
 				if ( match[ 1 ] ) {
 					context = context instanceof jQuery ? context[ 0 ] : context;
 
@@ -3174,7 +3174,7 @@ var rootjQuery,
 						true
 					) );
 
-					// HANDLE: $(html, props)
+					// HAndLE: $(html, props)
 					if ( rsingleTag.test( match[ 1 ] ) && jQuery.isPlainObject( context ) ) {
 						for ( match in context ) {
 
@@ -3191,7 +3191,7 @@ var rootjQuery,
 
 					return this;
 
-				// HANDLE: $(#id)
+				// HAndLE: $(#id)
 				} else {
 					elem = document.getElementById( match[ 2 ] );
 
@@ -3204,23 +3204,23 @@ var rootjQuery,
 					return this;
 				}
 
-			// HANDLE: $(expr, $(...))
+			// HAndLE: $(expr, $(...))
 			} else if ( !context || context.jquery ) {
 				return ( context || root ).find( selector );
 
-			// HANDLE: $(expr, context)
+			// HAndLE: $(expr, context)
 			// (which is just equivalent to: $(context).find(expr)
 			} else {
 				return this.constructor( context ).find( selector );
 			}
 
-		// HANDLE: $(DOMElement)
+		// HAndLE: $(DOMElement)
 		} else if ( selector.nodeType ) {
 			this[ 0 ] = selector;
 			this.length = 1;
 			return this;
 
-		// HANDLE: $(function)
+		// HAndLE: $(function)
 		// Shortcut for document ready
 		} else if ( isFunction( selector ) ) {
 			return root.ready !== undefined ?
@@ -3717,7 +3717,7 @@ jQuery.extend( {
 				},
 
 				// Keep pipe for back-compat
-				pipe: function( /* fnDone, fnFail, fnProgress */ ) {
+				pipe: function( /* fndone, fnFail, fnProgress */ ) {
 					var fns = arguments;
 
 					return jQuery.Deferred( function( newDefer ) {
@@ -6129,7 +6129,7 @@ function remove( elem, selector, keepData ) {
 
 	for ( ; ( node = nodes[ i ] ) != null; i++ ) {
 		if ( !keepData && node.nodeType === 1 ) {
-			jQuery.cleanData( getAll( node ) );
+			jQuery.cleandata( getAll( node ) );
 		}
 
 		if ( node.parentNode ) {
@@ -6190,7 +6190,7 @@ jQuery.extend( {
 		return clone;
 	},
 
-	cleanData: function( elems ) {
+	cleandata: function( elems ) {
 		var data, elem, type,
 			special = jQuery.event.special,
 			i = 0;
@@ -6288,7 +6288,7 @@ jQuery.fn.extend( {
 			if ( elem.nodeType === 1 ) {
 
 				// Prevent memory leaks
-				jQuery.cleanData( getAll( elem, false ) );
+				jQuery.cleandata( getAll( elem, false ) );
 
 				// Remove any remaining nodes
 				elem.textContent = "";
@@ -6329,7 +6329,7 @@ jQuery.fn.extend( {
 
 						// Remove element nodes and prevent memory leaks
 						if ( elem.nodeType === 1 ) {
-							jQuery.cleanData( getAll( elem, false ) );
+							jQuery.cleandata( getAll( elem, false ) );
 							elem.innerHTML = value;
 						}
 					}
@@ -6354,7 +6354,7 @@ jQuery.fn.extend( {
 			var parent = this.parentNode;
 
 			if ( jQuery.inArray( this, ignored ) < 0 ) {
-				jQuery.cleanData( getAll( this ) );
+				jQuery.cleandata( getAll( this ) );
 				if ( parent ) {
 					parent.replaceChild( elem, this );
 				}

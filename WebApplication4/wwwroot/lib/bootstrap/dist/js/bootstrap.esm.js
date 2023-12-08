@@ -12,8 +12,8 @@ import * as Popper from '@popperjs/core';
  * --------------------------------------------------------------------------
  */
 const MAX_UID = 1000000;
-const MILLISECONDS_MULTIPLIER = 1000;
-const TRANSITION_END = 'transitionend'; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+const MILLISECOndS_MULTIPLIER = 1000;
+const TRANSITION_End = 'transitionend'; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
 const toType = obj => {
   if (obj === null || obj === undefined) {
@@ -76,31 +76,31 @@ const getElementFromSelector = element => {
   return selector ? document.querySelector(selector) : null;
 };
 
-const getTransitionDurationFromElement = element => {
+const getTransitiondurationFromElement = element => {
   if (!element) {
     return 0;
   } // Get transition-duration of the element
 
 
   let {
-    transitionDuration,
-    transitionDelay
+    transitionduration,
+    transitiondelay
   } = window.getComputedStyle(element);
-  const floatTransitionDuration = Number.parseFloat(transitionDuration);
-  const floatTransitionDelay = Number.parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
+  const floatTransitionduration = Number.parseFloat(transitionduration);
+  const floatTransitiondelay = Number.parseFloat(transitiondelay); // Return 0 if element or transition duration is not found
 
-  if (!floatTransitionDuration && !floatTransitionDelay) {
+  if (!floatTransitionduration && !floatTransitiondelay) {
     return 0;
   } // If multiple durations are defined, take the first
 
 
-  transitionDuration = transitionDuration.split(',')[0];
-  transitionDelay = transitionDelay.split(',')[0];
-  return (Number.parseFloat(transitionDuration) + Number.parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
+  transitionduration = transitionduration.split(',')[0];
+  transitiondelay = transitiondelay.split(',')[0];
+  return (Number.parseFloat(transitionduration) + Number.parseFloat(transitiondelay)) * MILLISECOndS_MULTIPLIER;
 };
 
 const triggerTransitionEnd = element => {
-  element.dispatchEvent(new Event(TRANSITION_END));
+  element.dispatchEvent(new Event(TRANSITION_End));
 };
 
 const isElement = obj => {
@@ -217,7 +217,7 @@ const getjQuery = () => {
 
 const DOMContentLoadedCallbacks = [];
 
-const onDOMContentLoaded = callback => {
+const ondOMContentLoaded = callback => {
   if (document.readyState === 'loading') {
     // add listener on the first call when the document is in loading state
     if (!DOMContentLoadedCallbacks.length) {
@@ -235,7 +235,7 @@ const onDOMContentLoaded = callback => {
 const isRTL = () => document.documentElement.dir === 'rtl';
 
 const defineJQueryPlugin = plugin => {
-  onDOMContentLoaded(() => {
+  ondOMContentLoaded(() => {
     const $ = getjQuery();
     /* istanbul ignore if */
 
@@ -266,7 +266,7 @@ const executeAfterTransition = (callback, transitionElement, waitForTransition =
   }
 
   const durationPadding = 5;
-  const emulatedDuration = getTransitionDurationFromElement(transitionElement) + durationPadding;
+  const emulatedDuration = getTransitiondurationFromElement(transitionElement) + durationPadding;
   let called = false;
 
   const handler = ({
@@ -277,11 +277,11 @@ const executeAfterTransition = (callback, transitionElement, waitForTransition =
     }
 
     called = true;
-    transitionElement.removeEventListener(TRANSITION_END, handler);
+    transitionElement.removeEventListener(TRANSITION_End, handler);
     execute(callback);
   };
 
-  transitionElement.addEventListener(TRANSITION_END, handler);
+  transitionElement.addEventListener(TRANSITION_End, handler);
   setTimeout(() => {
     if (!called) {
       triggerTransitionEnd(transitionElement);
@@ -1107,7 +1107,7 @@ const EVENT_MOUSEENTER = `mouseenter${EVENT_KEY$a}`;
 const EVENT_MOUSELEAVE = `mouseleave${EVENT_KEY$a}`;
 const EVENT_TOUCHSTART = `touchstart${EVENT_KEY$a}`;
 const EVENT_TOUCHMOVE = `touchmove${EVENT_KEY$a}`;
-const EVENT_TOUCHEND = `touchend${EVENT_KEY$a}`;
+const EVENT_TOUCHEnd = `touchend${EVENT_KEY$a}`;
 const EVENT_POINTERDOWN = `pointerdown${EVENT_KEY$a}`;
 const EVENT_POINTERUP = `pointerup${EVENT_KEY$a}`;
 const EVENT_DRAG_START = `dragstart${EVENT_KEY$a}`;
@@ -1116,7 +1116,7 @@ const EVENT_CLICK_DATA_API$5 = `click${EVENT_KEY$a}${DATA_API_KEY$6}`;
 const CLASS_NAME_CAROUSEL = 'carousel';
 const CLASS_NAME_ACTIVE$2 = 'active';
 const CLASS_NAME_SLIDE = 'slide';
-const CLASS_NAME_END = 'carousel-item-end';
+const CLASS_NAME_End = 'carousel-item-end';
 const CLASS_NAME_START = 'carousel-item-start';
 const CLASS_NAME_NEXT = 'carousel-item-next';
 const CLASS_NAME_PREV = 'carousel-item-prev';
@@ -1126,8 +1126,8 @@ const SELECTOR_ACTIVE_ITEM = '.active.carousel-item';
 const SELECTOR_ITEM = '.carousel-item';
 const SELECTOR_ITEM_IMG = '.carousel-item img';
 const SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev';
-const SELECTOR_INDICATORS = '.carousel-indicators';
-const SELECTOR_INDICATOR = '[data-bs-target]';
+const SELECTOR_IndICATORS = '.carousel-indicators';
+const SELECTOR_IndICATOR = '[data-bs-target]';
 const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
 const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]';
 const POINTER_TYPE_TOUCH = 'touch';
@@ -1150,7 +1150,7 @@ class Carousel extends BaseComponent {
     this.touchStartX = 0;
     this.touchDeltaX = 0;
     this._config = this._getConfig(config);
-    this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
+    this._indicatorsElement = SelectorEngine.findOne(SELECTOR_IndICATORS, this._element);
     this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
     this._pointerEvent = Boolean(window.PointerEvent);
 
@@ -1332,7 +1332,7 @@ class Carousel extends BaseComponent {
     } else {
       EventHandler.on(this._element, EVENT_TOUCHSTART, event => start(event));
       EventHandler.on(this._element, EVENT_TOUCHMOVE, event => move(event));
-      EventHandler.on(this._element, EVENT_TOUCHEND, event => end(event));
+      EventHandler.on(this._element, EVENT_TOUCHEnd, event => end(event));
     }
   }
 
@@ -1378,7 +1378,7 @@ class Carousel extends BaseComponent {
       const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE$1, this._indicatorsElement);
       activeIndicator.classList.remove(CLASS_NAME_ACTIVE$2);
       activeIndicator.removeAttribute('aria-current');
-      const indicators = SelectorEngine.find(SELECTOR_INDICATOR, this._indicatorsElement);
+      const indicators = SelectorEngine.find(SELECTOR_IndICATOR, this._indicatorsElement);
 
       for (let i = 0; i < indicators.length; i++) {
         if (Number.parseInt(indicators[i].getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
@@ -1420,7 +1420,7 @@ class Carousel extends BaseComponent {
 
     const isCycling = Boolean(this._interval);
     const isNext = order === ORDER_NEXT;
-    const directionalClassName = isNext ? CLASS_NAME_START : CLASS_NAME_END;
+    const directionalClassName = isNext ? CLASS_NAME_START : CLASS_NAME_End;
     const orderClassName = isNext ? CLASS_NAME_NEXT : CLASS_NAME_PREV;
 
     const eventDirectionName = this._orderToDirection(order);
@@ -1951,7 +1951,7 @@ const EVENT_KEYDOWN_DATA_API = `keydown${EVENT_KEY$8}${DATA_API_KEY$4}`;
 const EVENT_KEYUP_DATA_API = `keyup${EVENT_KEY$8}${DATA_API_KEY$4}`;
 const CLASS_NAME_SHOW$6 = 'show';
 const CLASS_NAME_DROPUP = 'dropup';
-const CLASS_NAME_DROPEND = 'dropend';
+const CLASS_NAME_DROPEnd = 'dropend';
 const CLASS_NAME_DROPSTART = 'dropstart';
 const CLASS_NAME_NAVBAR = 'navbar';
 const SELECTOR_DATA_TOGGLE$3 = '[data-bs-toggle="dropdown"]';
@@ -1959,9 +1959,9 @@ const SELECTOR_MENU = '.dropdown-menu';
 const SELECTOR_NAVBAR_NAV = '.navbar-nav';
 const SELECTOR_VISIBLE_ITEMS = '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)';
 const PLACEMENT_TOP = isRTL() ? 'top-end' : 'top-start';
-const PLACEMENT_TOPEND = isRTL() ? 'top-start' : 'top-end';
+const PLACEMENT_TOPEnd = isRTL() ? 'top-start' : 'top-end';
 const PLACEMENT_BOTTOM = isRTL() ? 'bottom-end' : 'bottom-start';
-const PLACEMENT_BOTTOMEND = isRTL() ? 'bottom-start' : 'bottom-end';
+const PLACEMENT_BOTTOMEnd = isRTL() ? 'bottom-start' : 'bottom-end';
 const PLACEMENT_RIGHT = isRTL() ? 'left-start' : 'right-start';
 const PLACEMENT_LEFT = isRTL() ? 'right-start' : 'left-start';
 const Default$8 = {
@@ -2161,7 +2161,7 @@ class Dropdown extends BaseComponent {
   _getPlacement() {
     const parentDropdown = this._element.parentNode;
 
-    if (parentDropdown.classList.contains(CLASS_NAME_DROPEND)) {
+    if (parentDropdown.classList.contains(CLASS_NAME_DROPEnd)) {
       return PLACEMENT_RIGHT;
     }
 
@@ -2173,10 +2173,10 @@ class Dropdown extends BaseComponent {
     const isEnd = getComputedStyle(this._menu).getPropertyValue('--bs-position').trim() === 'end';
 
     if (parentDropdown.classList.contains(CLASS_NAME_DROPUP)) {
-      return isEnd ? PLACEMENT_TOPEND : PLACEMENT_TOP;
+      return isEnd ? PLACEMENT_TOPEnd : PLACEMENT_TOP;
     }
 
-    return isEnd ? PLACEMENT_BOTTOMEND : PLACEMENT_BOTTOM;
+    return isEnd ? PLACEMENT_BOTTOMEnd : PLACEMENT_BOTTOM;
   }
 
   _detectNavbar() {
@@ -3649,7 +3649,7 @@ class Tooltip extends BaseComponent {
     }
 
     if (event) {
-      const context = this._initializeOnDelegatedTarget(event);
+      const context = this._initializeOndelegatedTarget(event);
 
       context._activeTrigger.click = !context._activeTrigger.click;
 
@@ -3909,7 +3909,7 @@ class Tooltip extends BaseComponent {
   } // Private
 
 
-  _initializeOnDelegatedTarget(event, context) {
+  _initializeOndelegatedTarget(event, context) {
     return context || this.constructor.getOrCreateInstance(event.delegateTarget, this._getDelegateConfig());
   }
 
@@ -4030,7 +4030,7 @@ class Tooltip extends BaseComponent {
   }
 
   _enter(event, context) {
-    context = this._initializeOnDelegatedTarget(event, context);
+    context = this._initializeOndelegatedTarget(event, context);
 
     if (event) {
       context._activeTrigger[event.type === 'focusin' ? TRIGGER_FOCUS : TRIGGER_HOVER] = true;
@@ -4057,7 +4057,7 @@ class Tooltip extends BaseComponent {
   }
 
   _leave(event, context) {
-    context = this._initializeOnDelegatedTarget(event, context);
+    context = this._initializeOndelegatedTarget(event, context);
 
     if (event) {
       context._activeTrigger[event.type === 'focusout' ? TRIGGER_FOCUS : TRIGGER_HOVER] = context._element.contains(event.relatedTarget);

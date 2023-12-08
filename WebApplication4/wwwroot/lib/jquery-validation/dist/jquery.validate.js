@@ -1507,7 +1507,7 @@ $.extend( $.validator, {
 			method = typeof method === "string" && method || "remote";
 
 			var previous = this.previousValue( element, method ),
-				validator, data, optionDataString;
+				validator, data, optiondataString;
 
 			if ( !this.settings.messages[ element.name ] ) {
 				this.settings.messages[ element.name ] = {};
@@ -1516,12 +1516,12 @@ $.extend( $.validator, {
 			this.settings.messages[ element.name ][ method ] = previous.message;
 
 			param = typeof param === "string" && { url: param } || param;
-			optionDataString = $.param( $.extend( { data: value }, param.data ) );
-			if ( previous.old === optionDataString ) {
+			optiondataString = $.param( $.extend( { data: value }, param.data ) );
+			if ( previous.old === optiondataString ) {
 				return previous.valid;
 			}
 
-			previous.old = optionDataString;
+			previous.old = optiondataString;
 			validator = this;
 			this.startRequest( element );
 			data = {};

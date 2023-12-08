@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using WebApplication4.Models;
 
 namespace WebApplication4.DataDB;
 
@@ -28,8 +29,8 @@ public partial class PmsDatabaseContext : DbContext
     public virtual DbSet<SysAcc> SysAccs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=QCU;Initial Catalog=PMS_DATABASE;Integrated Security=True;TrustServerCertificate=True");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-8F9HRQ6\\SQLEXPRESS;Initial Catalog=PMS_DATABASE;Integrated Security=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -42,7 +43,7 @@ public partial class PmsDatabaseContext : DbContext
             entity.Property(e => e.AttdId).HasColumnName("ATTD_ID");
             entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.EmpId).HasColumnName("Emp_ID");
-            entity.Property(e => e.Nd).HasColumnName("ND");
+            entity.Property(e => e.nd).HasColumnName("nd");
             entity.Property(e => e.St).HasColumnName("ST");
             entity.Property(e => e.Tr).HasColumnName("TR");
         });
@@ -151,4 +152,5 @@ public partial class PmsDatabaseContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
 }
