@@ -33,9 +33,6 @@ namespace WebApplication4.Controllers
                 return RedirectToAction("Dashboard", "Pages");
             }
 
-            // Authentication failed, return to the login page with an error message
-            ModelState.AddModelError(string.Empty, "Invalid username or password.");
-
             // Return to the Index action of the Home controller with the model to display entered username and the error message
             return RedirectToAction("Index", "Home", new { model = model, error = "Invalid username or password." });
         }
