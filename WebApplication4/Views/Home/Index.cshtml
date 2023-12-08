@@ -26,6 +26,11 @@
                     </div>
                     <br />
 
+                    <!-- Display validation error messages -->
+                    <div class="text-danger mt-2">
+                        @Html.ValidationSummary()
+                    </div>
+
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
             </div>
@@ -33,12 +38,4 @@
     </div>
 </div>
 
-<script>
-    // Add this script to handle redirection after successful login
-    @if (User.Identity.IsAuthenticated)
-    {
-        <text>
-                window.location.href = '@Url.Action("Dashboard", "Pages")';
-        </text>
-    }
-</script>
+
