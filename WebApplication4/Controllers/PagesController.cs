@@ -12,10 +12,6 @@ namespace WebApplication4.Controllers
         {
             return View();
         }
-        public IActionResult Deductions()
-        {
-            return View();
-        }
         public IActionResult Employees()
         {
             return View();

@@ -17,8 +17,6 @@ public partial class PmsDatabaseContext : DbContext
 
     public virtual DbSet<Attd> Attds { get; set; }
 
-    public virtual DbSet<Dd> Dds { get; set; }
-
     public virtual DbSet<EmpInfo> EmpInfos { get; set; }
 
     public virtual DbSet<P> Ps { get; set; }
@@ -38,24 +36,12 @@ public partial class PmsDatabaseContext : DbContext
             entity.ToTable("ATTD");
 
             entity.HasIndex(e => e.EmpId, "IX_ATTD").IsUnique();
-
             entity.Property(e => e.AttdId).HasColumnName("ATTD_ID");
             entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.EmpId).HasColumnName("Emp_ID");
             entity.Property(e => e.Nd).HasColumnName("ND");
             entity.Property(e => e.St).HasColumnName("ST");
             entity.Property(e => e.Tr).HasColumnName("TR");
-        });
-
-        modelBuilder.Entity<Dd>(entity =>
-        {
-            entity.ToTable("DD");
-
-            entity.Property(e => e.DdId).HasColumnName("DD_ID");
-            entity.Property(e => e.Ddname)
-                .HasMaxLength(10)
-                .IsFixedLength()
-                .HasColumnName("DDName");
         });
 
         modelBuilder.Entity<EmpInfo>(entity =>
@@ -67,7 +53,6 @@ public partial class PmsDatabaseContext : DbContext
             entity.Property(e => e.EmpId)
                 .ValueGeneratedOnAdd()
                 .HasColumnName("Emp_ID");
-            entity.Property(e => e.DdId).HasColumnName("DD_ID");
             entity.Property(e => e.Fname).HasMaxLength(50);
             entity.Property(e => e.Lname)
                 .HasMaxLength(50)
@@ -82,11 +67,6 @@ public partial class PmsDatabaseContext : DbContext
                 .IsFixedLength();
             entity.Property(e => e.PositionId).HasColumnName("Position_ID");
             entity.Property(e => e.SssNo).HasColumnName("SSS_NO");
-
-            entity.HasOne(d => d.Dd).WithMany(p => p.EmpInfos)
-                .HasForeignKey(d => d.DdId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Emp_INFO_DD");
 
             entity.HasOne(d => d.Emp).WithOne(p => p.EmpInfo)
                 .HasPrincipalKey<Attd>(p => p.EmpId)
@@ -114,13 +94,10 @@ public partial class PmsDatabaseContext : DbContext
 
             entity.HasIndex(e => e.EmpId, "IX_PS").IsUnique();
 
-            entity.HasIndex(e => e.DdId, "IX_PS_1").IsUnique();
-
             entity.HasIndex(e => e.AttdId, "IX_PS_2").IsUnique();
 
             entity.Property(e => e.PsId).HasColumnName("PS_ID");
             entity.Property(e => e.AttdId).HasColumnName("ATTD_ID");
-            entity.Property(e => e.DdId).HasColumnName("DD_ID");
             entity.Property(e => e.EmpId).HasColumnName("Emp_ID");
         });
 

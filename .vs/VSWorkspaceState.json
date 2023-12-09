@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebApplication4",
-    "\\WebApplication4\\Views",
-    "\\WebApplication4\\Views\\Home",
-    "\\WebApplication4\\Views\\Pages"
+    "\\WebApplication4\\Views"
   ],
   "SelectedNode": "\\WebApplication4.sln",
   "PreviewInSolutionExplorer": false
