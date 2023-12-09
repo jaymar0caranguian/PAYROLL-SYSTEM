@@ -11,7 +11,5 @@ public partial class P
 
     public int AttdId { get; set; }
 
-    public int DdId { get; set; }
-
     public virtual EmpInfo? EmpInfo { get; set; }
 }
