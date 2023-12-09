@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\WebApplication4",
+    "\\WebApplication4\\DataDB",
     "\\WebApplication4\\Views",
     "\\WebApplication4\\Views\\Home",
     "\\WebApplication4\\Views\\Pages"
   ],
-  "SelectedNode": "\\WebApplication4.sln",
+  "SelectedNode": "\\WebApplication4\\DataDB\\Attd.cs",
   "PreviewInSolutionExplorer": false
 }
