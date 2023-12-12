@@ -47,33 +47,28 @@ namespace WebApplication4.Controllers
         // GET: Attds/Create
         public IActionResult Create()
         {
-            return View();
+            return PartialView("_Create", new Attd());
         }
 
-        // POST: Attds/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AttdId,Date,EmpId,Holiday,St,Tr,nd")] Attd attd)
         {
+            if (attd.St == 0 || attd.Tr == 0 || attd.nd == 0)
+            {
+                ModelState.AddModelError("", "Values cannot be zero.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(attd);
                 await _context.SaveChangesAsync();
-
-                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
-                {
-                    // If it's an AJAX request, return a partial view
-                    return PartialView("_SaveModal", new WebApplication4.DataDB.Attd());
-                }
-
-                return RedirectToAction(nameof(Index));
+                return PartialView("_Create", new Attd());
             }
 
-            return View(attd);
+            // Return the view with validation errors
+            return PartialView("_Create", attd);
         }
-
 
         // GET: Attds/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -166,6 +161,13 @@ namespace WebApplication4.Controllers
         private bool AttdExists(int id)
         {
           return (_context.Attds?.Any(e => e.AttdId == id)).GetValueOrDefault();
+        }
+        // GET: Attds/Report
+        public IActionResult report()
+        {
+            // Add logic to generate and return the report view
+            // You can use a dedicated view for reporting or reuse the existing one
+            return View();
         }
     }
 }

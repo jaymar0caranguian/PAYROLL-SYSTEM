@@ -19,23 +19,23 @@ namespace WebApplication4.Controllers
         }
 
         [HttpPost]
-public IActionResult Index(SysAcc model)
-{
-    // Check username and password against the database
-    var user = _context.SysAccs.SingleOrDefault(u => u.Username == model.Username && u.Pass == model.Pass);
+        public IActionResult Index(SysAcc model)
+        {
+            // Check username and password against the database
+            var user = _context.SysAccs.SingleOrDefault(u => u.Username == model.Username && u.Pass == model.Pass);
 
-    if (user != null)
-    {
-        // Authentication successful, redirect to the Dashboard Razor Page
-        return RedirectToAction("Dashboard", "Pages");
-    }
+            if (user != null)
+            {
+                // Authentication successful, redirect to the Dashboard Razor Page
+                return RedirectToAction("Dashboard", "Pages");
+            }
 
-    // Authentication failed, return to the login page with an error message
-    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            // Authentication failed, return to the login page with an error message
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
 
-    // Return to the Index view with the model to display entered username
-    return RedirectToAction("Index", "Home", model);
-}
+            // Return to the Index view with the model to display entered username
+            return RedirectToAction("Index", "Home", model);
+        }
 
 
     }
