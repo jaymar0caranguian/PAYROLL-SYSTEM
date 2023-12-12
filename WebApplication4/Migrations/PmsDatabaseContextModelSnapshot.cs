@@ -46,11 +46,11 @@ namespace WebApplication4.Migrations
                         .HasColumnName("nd");
 
                     b.Property<int>("St")
-                        .HasColumnType("int")
+                        .HasColumnType("time")
                         .HasColumnName("ST");
 
                     b.Property<int>("Tr")
-                        .HasColumnType("int")
+                        .HasColumnType("time")
                         .HasColumnName("TR");
 
                     b.HasKey("AttdId");

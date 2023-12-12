@@ -18,8 +18,8 @@ namespace WebApplication4.Migrations
                     Date = table.Column<DateTime>(type: "date", nullable: false),
                     Emp_ID = table.Column<int>(type: "int", nullable: false),
                     Holiday = table.Column<int>(type: "int", nullable: false),
-                    ST = table.Column<int>(type: "int", nullable: false),
-                    TR = table.Column<int>(type: "int", nullable: false),
+                    ST = table.Column<int>(type: "time", nullable: false),
+                    TR = table.Column<int>(type: "time", nullable: false),
                     nd = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

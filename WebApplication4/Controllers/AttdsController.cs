@@ -54,10 +54,7 @@ namespace WebApplication4.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AttdId,Date,EmpId,Holiday,St,Tr,nd")] Attd attd)
         {
-            if (attd.St == 0 || attd.Tr == 0 || attd.nd == 0)
-            {
-                ModelState.AddModelError("", "Values cannot be zero.");
-            }
+          
 
             if (ModelState.IsValid)
             {

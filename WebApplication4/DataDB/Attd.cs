@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication4.DataDB;
 
@@ -13,9 +14,11 @@ public partial class Attd
 
     public string Holiday { get; set; }
 
-    public int St { get; set; }
+    [DisplayFormat(DataFormatString = "{0:hh\\:mm}", ApplyFormatInEditMode = true)]
+    public TimeSpan St { get; set; }
 
-    public int Tr { get; set; }
+    [DisplayFormat(DataFormatString = "{0:hh\\:mm}", ApplyFormatInEditMode = true)]
+    public TimeSpan Tr { get; set; }
 
     public int nd { get; set; }
 
