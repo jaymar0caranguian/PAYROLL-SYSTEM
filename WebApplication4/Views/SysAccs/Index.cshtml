@@ -1,6 +1,7 @@
-﻿
+﻿@model IEnumerable<WebApplication4.DataDB.SysAcc>
+
 @{
-    ViewData["title"] = "Reports";
+    ViewData["Title"] = "Index";
 }
 
 <div class="row">
@@ -31,54 +32,52 @@
             <div class="bg-white p-4 shadow">
                 <div class="row">
                     <div class="col-7">
-                        <h1>Print Report</h1>
+                        <h1>Manage Users</h1>
                     </div>
 
                     <div class="col-5 pt-2 d-inline m-0" align="right">
-                        <div class="row gx-2">
-                            <div class="col-6">
-                                <div class="input-group date w-100" id="datepicker">
-                                    <input type="text" class="form-control" id="date" />
-                                    <span class="input-group-append">
-                                        <span class="input-group-text bg-light d-block">
-                                            <i class="bi-calendar"></i>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#generate-modal"><i class="bi-download"></i> Generate Report</button>
-                            </div>
-                        </div>
+                        <a asp-action="Create" class="btn btn-primary">Create New</a>
                     </div>
                 </div>
                 <br />
 
-                <h3>Data Attendance</h3>
                 <table class="table table-hover">
-                    <thead>
+            <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Username)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Pass)
+                        </th>
+                        <th></th>
+                    </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
                         <tr>
-                            <td>Employee ID</td>
-                            <td>Name</td>
-                            <td>Holiday</td>
-                            <td>Schedule Time</td>
-                            <td>Time Record</td>
-                            <td>Night Differential</td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Username)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Pass)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>123456</td>
-                            <td>Juan G. Dela Cruz</td>
-                            <td><i class="bi-x-lg"></i></td>
-                            <td>8:30 &mdash; 5:30</td>
-                            <td>8:26 &mdash; 5:23</td>
-                            <td>N/A</td>
-                        </tr>
+                             }
                     </tbody>
                 </table>
-                <br />
+                            <br />
 
                 <div class="row">
                     <div class="col-6">
@@ -95,7 +94,6 @@
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="logout-modal" tabindex="-1" aria-labelledby="logout-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -113,28 +111,3 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="generate-modal" tabindex="-1" aria-labelledby="generate-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="generate-modal-label">Generate Report</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Generate a day report?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Generate</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script defer>
-    window.onload = () =>
-        $(function () {
-            $('#datepicker').datepicker();
-        });
-</script>

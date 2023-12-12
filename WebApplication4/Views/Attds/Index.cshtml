@@ -12,12 +12,12 @@
             <div class="col-8" align="left">
                 <h5><a href="@Url.Action("Dashboard", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-house"></i> Home</a><br /></h5>
                 <h5><a href="@Url.Action("Index","Attds")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
-                <h5><a href="@Url.Action("Index", "EmpInfoes")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
+                <h5><a href="@Url.Action("Employees", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
                 <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
                 <h5><a href="@Url.Action("Positions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
                 <h5><a href="@Url.Action("Deductions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-dash-circle"></i> Deduction List</a><br /></h5>
-                <h5><a href="@Url.Action("Reports", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
-                <h5><a href="@Url.Action("ManageUsers", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "Report")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "SysAccs")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
                 <br /><br />
 
                 <h5><a href="#" class="text-decoration-none text-white mt-2" data-bs-toggle="modal" data-bs-target="#logout-modal"><i class="bi-box-arrow-left"></i> Logout</a><br /></h5>
@@ -37,14 +37,15 @@
                         <div class="row gx-2">
                             <div class="col-6">
                                 <div class="input-group date w-100" id="datepicker">
-                                    <input type="text" class="form-control" id="date" disabled />
+                                    <input type="text" class="form-control" id="date" disabled/>
                                     <span class="input-group-append">
                                     </span>
                                 </div>
                             </div>
 
                             <div class="col-6">
-                                <a class="btn btn-primary w-100" asp-action="Create">+Add Attendance</a>
+                                <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#new-attendance-modal"><i class="bi-plus"></i>+Add Attendance</button>
+                        
                             </div>
                         </div>
                     </div>
@@ -96,6 +97,7 @@
                                     }
                                 </tbody>
                             </table>
+                            @await Html.PartialAsync("_Create", new WebApplication4.DataDB.Attd())
                         </div>
                         <div class="row">
                             <div class="col-6">
@@ -132,19 +134,20 @@
         </div>
     </div>
 </div>
-<script defer>
-    window.onload = () => {
+<script>
+        window.onload = () => {
         $(function () {
             $('#date').datepicker();
         });
 
-        function getTodayDate() {
+    function getTodayDate() {
             const d = new Date();
             const f = n => (n < 10 ? '0' : '') + n;
-            return [d.getFullYear(), f(d.getMonth() + 1), f(d.getDate())].join('-');
+    return [d.getFullYear(), f(d.getMonth() + 1), f(d.getDate())].join('-');
         }
 
-        var todayDate = getTodayDate();
-        document.getElementById("date").value = todayDate;
+    var todayDate = getTodayDate();
+    document.getElementById("date").value = todayDate;
     };
 </script>
+

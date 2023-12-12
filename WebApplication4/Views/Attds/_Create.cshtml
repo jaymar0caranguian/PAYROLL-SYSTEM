@@ -1,0 +1,59 @@
+﻿<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+@model WebApplication4.DataDB.Attd
+
+@* ADDING MODAL *@
+<div class="modal fade" id="new-attendance-modal" tabindex="-1" aria-labelledby="new-attendance-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h5 class="modal-title" id="new-attendance-label">New Attendance</h5>
+
+                <div class="form-group">
+                    <form id="createPartial" asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Date" class="control-label">Attendance Date</label>
+                            <input asp-for="Date" class="form-control" id="date" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="EmpId" class="control-label">Employee ID</label>
+                            <input asp-for="EmpId" class="form-control" />
+                            <span asp-validation-for="EmpId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Holiday" class="control-label">Holiday</label>
+                            <select asp-for="Holiday" class="form-control">
+                                <option value="false">False</option>
+                                <option value="true">True</option>
+                            </select>
+                            <span asp-validation-for="Holiday" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="St" class="control-label">Schedule Time</label>
+                            <input asp-for="St" class="form-control" />
+                            <span asp-validation-for="St" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Tr" class="control-label">Time Record</label>
+                            <input asp-for="Tr" class="form-control" />
+                            <span asp-validation-for="Tr" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="nd" class="control-label">Night Differential</label>
+                            <input asp-for="nd" class="form-control" />
+                            <span asp-validation-for="nd" class="text-danger"></span>
+                        </div>
+                        <div class="form-group my-3">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+                <a asp-action="Index" class="btn btn-secondary">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
