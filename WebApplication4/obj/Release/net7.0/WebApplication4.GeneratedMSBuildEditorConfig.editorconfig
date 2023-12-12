@@ -16,6 +16,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\BSIT\Documents\GitHub\PAYROLL-SYSTEM\WebApplication4
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Attds/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcX0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,12 +84,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUmVwb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/SysAccs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzQWNjc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/SysAccs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzQWNjc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/SysAccs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzQWNjc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/SysAccs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzQWNjc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/SysAccs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3lzQWNjc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BSIT/Documents/GitHub/PAYROLL-SYSTEM/WebApplication4/Views/_ViewImports.cshtml]
