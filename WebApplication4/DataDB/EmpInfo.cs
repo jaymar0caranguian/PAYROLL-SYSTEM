@@ -22,11 +22,6 @@ public partial class EmpInfo
     public int PagibigNo { get; set; }
 
     public int PositionId { get; set; }
-
-    public int DdId { get; set; }
-
-    public virtual Dd Dd { get; set; } = null!;
-
     public virtual Attd Emp { get; set; } = null!;
 
     public virtual P EmpNavigation { get; set; } = null!;

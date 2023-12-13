@@ -37,32 +37,78 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function (data) {
                 if (data.success) {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error!',
-                        text: 'Error creating attendance record.',
-                        confirmButtonText: 'OK'
-                    });
-                } else {             
+                    var message = 'Attendance record created successfully!';
+
+                    if (data.countChange !== 1) {
+                        // Show the message only if the list count is changed
+                        message = 'Attendance record created successfully, and the list count is changed!';
+                    }
+
                     Swal.fire({
                         icon: 'success',
                         title: 'Success!',
-                        text: 'Attendance record created successfully!',
+                        text: message,
                         confirmButtonText: 'OK'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             location.reload();
                         }
                     });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: data.message || 'Error creating attendance record.',
+                        confirmButtonText: 'OK'
+                    });
                 }
             },
             error: function (xhr, status, error) {
-                alert('Error: ' + xhr.responseText); // Alert the error details
+                console.error('Error: ', xhr.responseText);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'An error occurred while processing the request.',
+                    confirmButtonText: 'OK'
+                });
             }
         });
     });
 
     $('#saveButton').click(function () {
         $('#createPartial').submit();
+    });
+});
+
+
+
+//position 
+$(document).ready(function () {
+    $("#createBtn").click(function (e) {
+        e.preventDefault(); 
+        var positionValue = $("#position").val();
+
+        var data = {
+            Position1: positionValue
+        };
+        $.ajax({
+            url: "/Positions/Create", 
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+                // Handle the success response, if needed
+                // You can update the UI without reloading the page
+                // For example, add the new item to the table
+                $("table tbody").append("<tr><td>" + response.Position1 + "</td><td><a class='btn btn-secondary' href='#'>Edit</a> | <a class='btn btn-danger' href='#'>Delete</a></td></tr>");
+
+                // Clear the input field
+                $("#position").val("");
+            },
+            error: function (error) {
+                // Handle the error, if needed
+                console.error(error);
+            }
+        });
     });
 });

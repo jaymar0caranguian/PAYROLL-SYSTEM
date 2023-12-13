@@ -54,18 +54,34 @@ namespace WebApplication4.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("AttdId,Date,EmpId,Holiday,St,Tr,nd")] Attd attd)
         {
-          
-
             if (ModelState.IsValid)
             {
+                int initialCount = _context.Attds.Count();
+
+                // Check if the EmpId exists in the Employee table
+                if (!_context.Employee.Any(e => e.EmpId == attd.EmpId))
+                {
+                    // Employee ID doesn't exist, return an error
+                    ModelState.AddModelError("EmpId", "Employee ID does not exist.");
+                    return PartialView("_Create", attd);
+                }
+
                 _context.Add(attd);
                 await _context.SaveChangesAsync();
-                return PartialView("_Create", new Attd());
+
+                int finalCount = _context.Attds.Count();
+
+                // Calculate the change in the list count
+                int countChange = finalCount - initialCount;
+
+                // Return the information about the change in the list count
+                return Json(new { success = true, countChange });
             }
 
             // Return the view with validation errors
             return PartialView("_Create", attd);
         }
+
 
         // GET: Attds/Edit/5
         public async Task<IActionResult> Edit(int? id)

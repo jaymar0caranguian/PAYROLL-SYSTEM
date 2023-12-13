@@ -57,3 +57,23 @@
         </div>
     </div>
 </div>
+<script>
+    window.onload = () => {
+        $(function () {
+            $('#date').datepicker();
+        });
+
+        function getTodayDate() {
+            const d = new Date();
+            const f = n => (n < 10 ? '0' : '') + n;
+            return [d.getFullYear(), f(d.getMonth() + 1), f(d.getDate())].join('-');
+        }
+
+        var todayDate = getTodayDate();
+        document.getElementById("date").value = todayDate;
+    };
+</script>
+
+
+
+

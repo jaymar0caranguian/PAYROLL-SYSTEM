@@ -55,8 +55,7 @@ namespace WebApplication4.Migrations
 
                     b.HasKey("AttdId");
 
-                    b.HasIndex(new[] { "EmpId" }, "IX_ATTD")
-                        .IsUnique();
+                    b.HasIndex(new[] { "EmpId" }, "IX_ATTD");
 
                     b.ToTable("ATTD", (string)null);
                 });

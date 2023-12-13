@@ -3,68 +3,40 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
+<link href="~/css/crud.css" rel="stylesheet" />
 <div class="container">
-    <div class="row justify-content-center align-items-center vh-100">
-        <div class="col-md-6">
-            <h1 class="text-center">Delete</h1>
+    <div class="row justify-content-center bg-transparent">
+        <div class="col-md-4 text-center">
+            <h4>Delete User</h4>
+            <hr />
+            <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
+            <dl class="row">
+                <dt class="col-sm-3 text-nowrap text-start">Date:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Date)</dd>
 
-            <h3 class="text-center">Are you sure you want to delete this?</h3>
+                <dt class="col-sm-3 text-nowrap text-start">Employee ID:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.EmpId)</dd>
 
-            <div>
-                <h4>Attendance</h4>
-                <hr />
-                <dl class="row">
-                    <dt class="col-sm-3">
-                        Date:
-                    </dt>
-                    <dd class="col-sm-9">
-                        @Html.DisplayFor(model => model.Date)
-                    </dd>
+                <dt class="col-sm-3 text-nowrap text-start">Holiday:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Holiday)</dd>
 
-                    <dt class="col-sm-3">
-                        Employee ID:
-                    </dt>
-                    <dd class="col-sm-9">
-                        @Html.DisplayFor(model => model.EmpId)
-                    </dd>
+                <dt class="col-sm-3 text-nowrap text-start">Schedule Time:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.St)</dd>
 
-                    <dt class="col-sm-3">
-                        Holiday:
-                    </dt>
-                    <dd class="col-sm-9">
-                        @Html.DisplayFor(model => model.Holiday)
-                    </dd>
+                <dt class="col-sm-3 text-nowrap text-start">Time Record:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Tr)</dd>
 
-                    <dt class="col-sm-3">
-                        Schedule Time:
-                    </dt>
-                    <dd class="col-sm-9">
-                        @Html.DisplayFor(model => model.St)
-                    </dd>
+                <dt class="col-sm-3 text-nowrap text-start">Night Differential:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.nd)</dd>
+            </dl>
 
-                    <dt class="col-sm-3">
-                        Time Record:
-                    </dt>
-                    <dd class="col-sm-9">
-                        @Html.DisplayFor(model => model.Tr)
-                    </dd>
-
-                    <dt class="col-sm-3">
-                        Night Differential:
-                    </dt>
-                    <dd class="col-sm-9">
-                        @Html.DisplayFor(model => model.nd)
-                    </dd>
-                </dl>
-
-                <form asp-action="Delete" class="text-center mt-3">
-                    <input type="hidden" asp-for="AttdId" />
-                    <input type="submit" value="Delete" class="btn btn-danger" />
-                    <span class="mx-2">|</span>
+            <form asp-action="Delete" class="text-center mt-3">
+                <input type="hidden" asp-for="AttdId" />
+                <div class="form-group">
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
                     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

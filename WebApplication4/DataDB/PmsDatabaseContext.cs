@@ -39,7 +39,7 @@ public partial class PmsDatabaseContext : DbContext
         {
             entity.ToTable("ATTD");
 
-            entity.HasIndex(e => e.EmpId, "IX_ATTD").IsUnique();
+            entity.HasIndex(e => e.EmpId, "IX_ATTD");
 
             entity.Property(e => e.AttdId).HasColumnName("ATTD_ID");
             entity.Property(e => e.Date).HasColumnType("date");
@@ -148,10 +148,25 @@ public partial class PmsDatabaseContext : DbContext
             entity.Property(e => e.Pass).HasMaxLength(50);
             entity.Property(e => e.Username).HasMaxLength(50);
         });
+        modelBuilder.Entity<Employee>(entity =>
+        {
+            entity.ToTable("Employee");
+
+            entity.Property(e => e.EmpId).HasColumnName("EmpID");
+            entity.Property(e => e.Fname).HasMaxLength(50);
+            entity.Property(e => e.Mname).HasMaxLength(50);
+            entity.Property(e => e.Lname).HasMaxLength(50);
+            entity.Property(e => e.Position).HasMaxLength(50);
+            entity.Property(e => e.Rate).HasMaxLength(50);
+            entity.Property(e => e.SssNo).HasMaxLength(50);
+            entity.Property(e => e.PagibigNo).HasMaxLength(50);
+        });
 
         OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public DbSet<WebApplication4.DataDB.Employee> Employee { get; set; } = default!;
 
 }

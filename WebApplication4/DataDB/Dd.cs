@@ -11,5 +11,5 @@ public partial class Dd
 
     public int Percentage { get; set; }
 
-    public virtual ICollection<EmpInfo> EmpInfos { get; set; } = new List<EmpInfo>();
+    //public virtual ICollection<EmpInfo> EmpInfos { get; set; } = new List<EmpInfo>();
 }

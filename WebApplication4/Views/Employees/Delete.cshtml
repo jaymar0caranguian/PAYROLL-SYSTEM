@@ -1,0 +1,51 @@
+﻿@model WebApplication4.DataDB.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link href="~/css/crud.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-4 text-center border rounded shadow" style="background-color: #ffffff;">
+            <h4>Delete Employee</h4>
+            <hr />
+          <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
+            
+            <dl class="row">
+                <dt class="col-sm-4 text-start">Employee ID</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.EmpId)</dd>
+
+                <dt class="col-sm-4 text-start">First Name</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Fname)</dd>
+
+                <dt class="col-sm-4 text-start">Middle Name</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Mname)</dd>
+
+                <dt class="col-sm-4 text-start">Last Name</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Lname)</dd>
+
+                <dt class="col-sm-4 text-start">Last Name</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Position)</dd>
+
+                <dt class="col-sm-4 text-start">Rate</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Rate)</dd>
+
+                <dt class="col-sm-4 text-start">SSS Number</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.SssNo)</dd>
+
+                <dt class="col-sm-4 text-start">Pag-Ibig No.</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.PagibigNo)</dd>
+            </dl>
+
+            <form asp-action="Delete" class="text-center mt-3">
+                <input type="hidden" asp-for="EmpId" />
+                <div class="form-group">
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

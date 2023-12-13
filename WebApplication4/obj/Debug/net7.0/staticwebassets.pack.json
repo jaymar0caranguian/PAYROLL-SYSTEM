@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\WebApplication4.bundle.scp.css"
     },
     {
+      "Id": "D:\\OneDrive - Polytechnic University of the Philippines\\Desktop\\PAYROLL-SYSTEM\\WebApplication4\\wwwroot\\css\\AttendanceEdit.css",
+      "PackagePath": "staticwebassets\\css\\AttendanceEdit.css"
+    },
+    {
+      "Id": "D:\\OneDrive - Polytechnic University of the Philippines\\Desktop\\PAYROLL-SYSTEM\\WebApplication4\\wwwroot\\css\\Crud.css",
+      "PackagePath": "staticwebassets\\css\\Crud.css"
+    },
+    {
       "Id": "D:\\OneDrive - Polytechnic University of the Philippines\\Desktop\\PAYROLL-SYSTEM\\WebApplication4\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
