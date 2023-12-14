@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-lg-3" style="background-color: #1C1C39;">
+        <img src="~/payroll-logo.png" width="100%" style="margin-top: -50px" />
+
+        <div class="container-fluid" style="margin-top: -30px" align="center">
+            <div class="col-8" align="left">
+                <h5><a href="@Url.Action("Dashboard", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-house"></i> Home</a><br /></h5>
+                <h5><a href="@Url.Action("Index","Attds")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
+                               <h5><a href="@Url.Action("Index", "Employees")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
+                <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
+             <h5><a href="@Url.Action("Index", "Positions")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "Report")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "SysAccs")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
+                <br /><br />
+
+                <h5><a href="#" class="text-decoration-none text-white mt-2" data-bs-toggle="modal" data-bs-target="#logout-modal"><i class="bi-box-arrow-left"></i> Logout</a><br /></h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-9 bg-light" style="height: 100vh !important">
+        <br/><br/>
+
+         <div class="container">
+             <div class="bg-white p-4 shadow">
+                 <h1>Home</h1>
+                 <br/>
+
+                 <p>Welcome back administrator!</p>
+             </div>
+         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="logout-modal" tabindex="-1" aria-labelledby="logout-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logout-modal-label">Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn btn-danger">Logout</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

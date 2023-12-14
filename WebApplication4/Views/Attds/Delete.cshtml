@@ -1,0 +1,42 @@
+﻿@model WebApplication4.DataDB.Attd
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<link href="~/css/crud.css" rel="stylesheet" />
+<div class="container">
+    <div class="row justify-content-center bg-transparent">
+        <div class="col-md-4 text-center">
+            <h4>Delete User</h4>
+            <hr />
+            <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
+            <dl class="row">
+                <dt class="col-sm-3 text-nowrap text-start">Date:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Date)</dd>
+
+                <dt class="col-sm-3 text-nowrap text-start">Employee ID:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.EmpId)</dd>
+
+                <dt class="col-sm-3 text-nowrap text-start">Holiday:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Holiday)</dd>
+
+                <dt class="col-sm-3 text-nowrap text-start">Schedule Time:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.St)</dd>
+
+                <dt class="col-sm-3 text-nowrap text-start">Time Record:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Tr)</dd>
+
+                <dt class="col-sm-3 text-nowrap text-start">Night Differential:</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.nd)</dd>
+            </dl>
+
+            <form asp-action="Delete" class="text-center mt-3">
+                <input type="hidden" asp-for="AttdId" />
+                <div class="form-group">
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

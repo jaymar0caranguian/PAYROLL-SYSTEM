@@ -1,0 +1,31 @@
+﻿@model WebApplication4.DataDB.SysAcc
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link href="~/css/crud.css" rel="stylesheet" />
+<div class="container">
+    <div class="row justify-content-center bg-transparent">
+        <div class="col-md-4">
+            <h4 class="text-center">Create New User</h4>
+            <hr />
+            <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
+            <form asp-action="Create" class="bg-transparent">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group d-grid gap-2">
+                    <input placeholder="Name" asp-for="Name" class="form-control bg-transparent border border-dark shadow-none" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <input placeholder="UserName" asp-for="Username" class="form-control bg-transparent border border-dark shadow-none" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                    <input placeholder="Password" asp-for="Pass" class="form-control bg-transparent border border-dark shadow-none" />
+                    <span asp-validation-for="Pass" class="text-danger"></span>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

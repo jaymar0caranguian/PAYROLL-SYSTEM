@@ -1,0 +1,54 @@
+﻿@model WebApplication4.DataDB.Attd
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Attd</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmpId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmpId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Holiday)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Holiday)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.St)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.St)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tr)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tr)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nd)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AttdId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

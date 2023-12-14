@@ -1,0 +1,120 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApplication4
+build_property.RootNamespace = WebApplication4
+build_property.ProjectDir = D:\OneDrive - Polytechnic University of the Philippines\Desktop\PAYROLL-SYSTEM\WebApplication4\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\OneDrive - Polytechnic University of the Philippines\Desktop\PAYROLL-SYSTEM\WebApplication4
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Attds/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXR0ZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/EmpInfoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wSW5mb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/EmpInfoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wSW5mb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/EmpInfoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wSW5mb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/EmpInfoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wSW5mb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/EmpInfoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wSW5mb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Attendance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcQXR0ZW5kYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Deductions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRGVkdWN0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Employees.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRW1wbG95ZWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/ManageUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcTWFuYWdlVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Payslip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUGF5c2xpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Positions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUG9zaXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Pages/Reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZXNcUmVwb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/OneDrive - Polytechnic University of the Philippines/Desktop/PAYROLL-SYSTEM/WebApplication4/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-n52u41lzsi

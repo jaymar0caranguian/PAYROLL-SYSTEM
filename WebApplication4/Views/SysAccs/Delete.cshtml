@@ -1,0 +1,44 @@
+﻿@model WebApplication4.DataDB.SysAcc
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<link href="~/css/crud.css" rel="stylesheet" />
+<div class="container">
+    <div class="row justify-content-center bg-transparent">
+        <div class="col-md-4">
+            <h4 class="text-center">Delete User</h4>
+            <hr />
+            <div>
+                <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Username)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Username)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Password
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Pass)
+                    </dd>
+                </dl>
+                <form asp-action="Delete" class="bg-transparent">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="form-group">
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
