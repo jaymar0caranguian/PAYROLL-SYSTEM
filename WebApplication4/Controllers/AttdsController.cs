@@ -19,12 +19,22 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Attds
-        public async Task<IActionResult> Index()
+        public ActionResult Index(int? page)
         {
-              return _context.Attds != null ? 
-                          View(await _context.Attds.ToListAsync()) :
-                          Problem("Entity set 'PmsDatabaseContext.Attds'  is null.");
+            int pageSize = 8; // Set your desired page size
+            int pageNumber = (page ?? 1);
+
+            var attds = _context.Attds.OrderBy(a => a.Date)
+                                      .Skip((pageNumber - 1) * pageSize)
+                                      .Take(pageSize)
+                                      .ToList();
+
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)_context.Attds.Count() / pageSize);
+
+            return View(attds);
         }
+
 
         // GET: Attds/Details/5
         public async Task<IActionResult> Details(int? id)

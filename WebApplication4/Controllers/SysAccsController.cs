@@ -19,12 +19,22 @@ namespace WebApplication4.Controllers
         }
 
         // GET: SysAccs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-              return _context.SysAccs != null ? 
-                          View(await _context.SysAccs.ToListAsync()) :
-                          Problem("Entity set 'PmsDatabaseContext.SysAccs'  is null.");
+            int pageSize = 8; // Set your desired page size
+            int pageNumber = page ?? 1;
+
+            var sysAccs = await _context.SysAccs
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.CurrentPage = pageNumber;
+            ViewBag.TotalPages = (int)Math.Ceiling((double)_context.SysAccs.Count() / pageSize);
+
+            return View(sysAccs);
         }
+
 
         // GET: SysAccs/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -158,5 +168,7 @@ namespace WebApplication4.Controllers
         {
           return (_context.SysAccs?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+
     }
 }
