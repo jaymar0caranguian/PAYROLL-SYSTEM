@@ -81,6 +81,26 @@
 
                 <div class="row">
                     <div class="col-6">
+                        <p>Showing @((ViewBag.CurrentPage - 1) * 5 + 1) to @Math.Min(ViewBag.CurrentPage * 5, ViewBag.TotalPages * 5) of @ViewBag.TotalPages entries</p>
+                    </div>
+                    <div class="col-6" align="right">
+                        @if (ViewBag.CurrentPage > 1)
+                        {
+                            <a href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 })" class="text-decoration-none">Previous</a>
+                        }
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <a href="@Url.Action("Index", new { page = i })" class="btn btn-secondary mx-2">@i</a>
+                        }
+                        @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                        {
+                            <a href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 })" class="text-decoration-none">Next</a>
+                        }
+                    </div>
+                </div>
+
+@*                 <div class="row">
+                    <div class="col-6">
                         <p>Showing 1 to 1 of 1 entries</p>
                     </div>
 
@@ -89,7 +109,7 @@
                         <a href="#" class="btn btn-secondary mx-2">1</a>
                         <a href="#" class="text-decoration-none">Next</a>
                     </div>
-                </div>
+                </div> *@
             </div>
         </div>
     </div>
