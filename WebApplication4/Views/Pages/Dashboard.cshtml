@@ -13,8 +13,6 @@
                 <h5><a href="@Url.Action("Index","Attds")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
                 <h5><a href="@Url.Action("Index", "Employees")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
                 <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
-                <h5><a href="@Url.Action("Index", "Positions")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
-                <h5><a href="@Url.Action("Deductions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-dash-circle"></i> Deduction List</a><br /></h5>
                 <h5><a href="@Url.Action("Index", "Report")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
                 <h5><a href="@Url.Action("Index", "SysAccs")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
                 <br /><br />
@@ -23,18 +21,22 @@
         </div>
     </div>
 
+    @model string
+
     <div class="col-lg-9 bg-light" style="height: 100vh !important">
-        <br/><br/>
+        <br /><br />
 
-         <div class="container">
-             <div class="bg-white p-4 shadow">
-                 <h1>Home</h1>
-                 <br/>
+        <div class="container">
+            <div class="bg-white p-4 shadow">
+                <h1>Home</h1>
+                <br />
 
-                 <p>Welcome back administrator!</p>
-             </div>
-         </div>
+                <p>Welcome back administrator!</p>
+            </div>
+        </div>
     </div>
+
+
 </div>
 
 <div class="modal fade" id="logout-modal" tabindex="-1" aria-labelledby="logout-modal-label" aria-hidden="true">
