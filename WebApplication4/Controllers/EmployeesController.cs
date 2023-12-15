@@ -25,7 +25,6 @@ namespace WebApplication4.Controllers
                           View(await _context.Employee.ToListAsync()) :
                           Problem("Entity set 'PmsDatabaseContext.Employee'  is null.");
         }
-
         // GET: Employees/Details/5
         public async Task<IActionResult> Details(int? id)
         {
