@@ -57,12 +57,18 @@ namespace WebApplication4.Controllers
             if (ModelState.IsValid)
             {
                 int initialCount = _context.Attds.Count();
+                if (_context.Attds.Any(a => a.EmpId == attd.EmpId && a.Date == attd.Date))
+                {
+                    ModelState.AddModelError("Date", "Employee already has attendance for this date.");
+                    return PartialView("_Create", attd);
+                }
 
                 if (!_context.Employee.Any(e => e.EmpId == attd.EmpId))
                 {
                     ModelState.AddModelError("EmpId", "Employee ID does not exist.");
                     return PartialView("_Create", attd);
                 }
+
                 _context.Add(attd);
                 await _context.SaveChangesAsync();
                 int finalCount = _context.Attds.Count();

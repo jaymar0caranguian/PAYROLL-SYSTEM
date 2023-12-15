@@ -40,10 +40,8 @@ $(document).ready(function () {
                     var message = 'Attendance record created successfully!';
 
                     if (data.countChange !== 1) {
-                        // Show the message only if the list count is changed
                         message = 'Attendance record created successfully, and the list count is changed!';
                     }
-
                     Swal.fire({
                         icon: 'success',
                         title: 'Success!',
@@ -58,7 +56,7 @@ $(document).ready(function () {
                     Swal.fire({
                         icon: 'error',
                         title: 'Error!',
-                        text: data.message || 'Error creating attendance record.',
+                        text: data.message || 'Check if the Employee Exist or An Attendance Record is Alrteady Made For This Day',
                         confirmButtonText: 'OK'
                     });
                 }
