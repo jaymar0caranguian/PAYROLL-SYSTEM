@@ -1,8 +1,12 @@
-﻿
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 @{
     ViewData["title"] = "Payslip";
+    decimal sssDeduction = 0.06m * Model.TotalSalary;
+    decimal pagIbigDeduction = 0.01m * Model.TotalSalary;
+    decimal totalDeduction = sssDeduction + pagIbigDeduction;
+    decimal FinalSalary = Model.TotalSalary - totalDeduction;
 }
-
 <div class="row">
     <div class="col-lg-3" style="background-color: #1C1C39;">
         <img src="~/payroll-logo.png" width="100%" style="margin-top: -50px" />
@@ -11,9 +15,9 @@
             <div class="col-8" align="left">
                 <h5><a href="@Url.Action("Dashboard", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-house"></i> Home</a><br /></h5>
                 <h5><a href="@Url.Action("Index","Attds")" class="text-decoration-none text-white mt-2"><i class="bi-person-check"></i> Attendance</a><br /></h5>
-                               <h5><a href="@Url.Action("Index", "Employees")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
+                 <h5><a href="@Url.Action("Index", "Employees")" class="text-decoration-none text-white mt-2"><i class="bi-people"></i> Employee List</a><br /></h5>
                 <h5><a href="@Url.Action("Payslip", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-envelope-paper"></i> Payslip</a><br /></h5>
-             <h5><a href="@Url.Action("Index", "Positions")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
+                <h5><a href="@Url.Action("Index", "Positions")" class="text-decoration-none text-white mt-2"><i class="bi-person-badge"></i> Position List</a><br /></h5>
                 <h5><a href="@Url.Action("Deductions", "Pages")" class="text-decoration-none text-white mt-2"><i class="bi-dash-circle"></i> Deduction List</a><br /></h5>
                 <h5><a href="@Url.Action("Index", "Report")" class="text-decoration-none text-white mt-2"><i class="bi-file-earmark-text"></i> Reports</a><br /></h5>
                 <h5><a href="@Url.Action("Index", "SysAccs")" class="text-decoration-none text-white mt-2"><i class="bi-person"></i> Manage Users</a><br /></h5>
@@ -55,16 +59,16 @@
                 </div>
                 <br />
 
-                <div class="card card-body border-dark">
+                <div class="card card-body border-dark" id="payslipTable">
                     <div class="row">
                         <div class="col-6">
-                            <p><b>Employee ID:</b> 2020-2345</p>
-                            <p><b>Name:</b> Si, Natoy M</p>
+                            <p><b>Employee ID:</b>@Model.EmployeeId</p>
+                            <p><b>Name:</b> @Model.EmployeeName</p>
                         </div>
 
                         <div class="col-6">
-                            <p><b>Payroll Ref:</b> 2020-5677</p>
-                            <p><b>Payroll Range:</b> Oct 3, 2020 &mdash; Jan 1, 2020</p>
+                            <p><b>Payroll Ref:</b> @Model.RandomNumber</p>
+                            <p style="font-size:smaller" ><b style="font-size:medium">Payroll Range:</b>@Model.FirstAttendanceDate - @Model.LatestAttendanceDate</p>
                         </div>
                     </div>
 
@@ -80,15 +84,18 @@
 
                     <div class="row pt-4">
                         <div class="col-6">
-                            <p><b>Night Differential:</b></p>
-                            <p><b>Basic Pay:</b></p>
-                            <p><b>Total Earnings:</b></p>
+                            <p><b>Night Differential:</b> @Model.TotalNdValue</p>
+                            <p><b>Basic Pay:</b> @Model.Rate</p>
+                            <p><b>Total Earnings:</b> @Model.TotalSalary</p>
                         </div>
 
                         <div class="col-6">
-                            <p><b>SSS:</b></p>
-                            <p><b>PAG-IBIG:</b></p>
-                            <p><b>Total Deduction:</b></p>
+                            <p><b>SSS:</b> @sssDeduction</p>
+                            <p><b>PAG-IBIG:</b> @pagIbigDeduction</p>
+                            <p><b>Total Deduction:</b> @totalDeduction</p>
+                        </div>
+                        <div class="col-12">
+                            <p><b>Final Salary:</b> @FinalSalary</p>
                         </div>
                     </div>
                 </div>
@@ -121,16 +128,33 @@
                 Print payslip?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Current Page</button>
+                <button id="DownloadPayslipReport" type="button" class="btn btn-primary">Current Page</button>
                 <button type="button" class="btn btn-secondary">All Pages</button>
             </div>
         </div>
     </div>
 </div>
 
-<script defer>
-    window.onload = () =>
-        $(function () {
-            $('#datepicker').datepicker();
+<script>
+    function pdf() {
+        const headingDiv = document.createElement('div');
+        headingDiv.innerHTML = '<h1>Salary Report</h1>';
+        const tableElement = document.getElementById('payslipTable');
+        const containerDiv = document.createElement('div');
+        containerDiv.appendChild(headingDiv);
+        containerDiv.appendChild(tableElement);
+
+        html2pdf(containerDiv, {
+            margin: 10,
+            filename: 'Salary Report.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         });
+    }
+    $(document).ready(function () {
+        $("#DownloadPayslipReport").click(function () {
+            pdf();
+        });
+    });
 </script>

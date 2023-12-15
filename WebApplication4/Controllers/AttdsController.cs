@@ -58,27 +58,17 @@ namespace WebApplication4.Controllers
             {
                 int initialCount = _context.Attds.Count();
 
-                // Check if the EmpId exists in the Employee table
                 if (!_context.Employee.Any(e => e.EmpId == attd.EmpId))
                 {
-                    // Employee ID doesn't exist, return an error
                     ModelState.AddModelError("EmpId", "Employee ID does not exist.");
                     return PartialView("_Create", attd);
                 }
-
                 _context.Add(attd);
                 await _context.SaveChangesAsync();
-
                 int finalCount = _context.Attds.Count();
-
-                // Calculate the change in the list count
                 int countChange = finalCount - initialCount;
-
-                // Return the information about the change in the list count
                 return Json(new { success = true, countChange });
             }
-
-            // Return the view with validation errors
             return PartialView("_Create", attd);
         }
 

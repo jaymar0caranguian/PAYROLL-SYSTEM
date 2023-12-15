@@ -168,5 +168,5 @@ public partial class PmsDatabaseContext : DbContext
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
     public DbSet<WebApplication4.DataDB.Employee> Employee { get; set; } = default!;
-
+    public object Deductions { get; internal set; }
 }
