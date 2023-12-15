@@ -12,6 +12,7 @@
             <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
             <form asp-action="Edit" class="bg-transparent">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="AttdId" />
 
                 <div class="form-group">
                     <label asp-for="Date" class="control-label">Attendance Date</label>
