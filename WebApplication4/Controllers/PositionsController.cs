@@ -19,13 +19,17 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Positions
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-              return _context.Positions != null ? 
-                          View(await _context.Positions.ToListAsync()) :
-                          Problem("Entity set 'PmsDatabaseContext.Positions'  is null.");
-        }
+            int pageSize = 10; // Set the number of positions per page
+            int pageNumber = (page ?? 1);
 
+            var positions = await _context.Positions.Skip((pageNumber - 1) * pageSize)
+                                                    .Take(pageSize)
+                                                    .ToListAsync();
+
+            return View(positions);
+        }
         // GET: Positions/Details/5
         public async Task<IActionResult> Details(int? id)
         {

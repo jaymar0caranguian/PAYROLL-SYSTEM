@@ -19,11 +19,34 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 8)
         {
-              return _context.Employee != null ? 
-                          View(await _context.Employee.ToListAsync()) :
-                          Problem("Entity set 'PmsDatabaseContext.Employee'  is null.");
+            // Calculate total number of pages
+            var totalCount = await _context.Employee.CountAsync();
+            var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+
+            // Validate page number
+            if (page < 1)
+            {
+                page = 1;
+            }
+            else if (page > totalPages)
+            {
+                page = totalPages;
+            }
+
+            // Retrieve employees for the current page
+            var employees = await _context.Employee
+                .OrderBy(e => e.EmpId)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            // Set ViewBag values for use in the view
+            ViewBag.TotalPages = totalPages;
+            ViewBag.CurrentPage = page;
+
+            return View(employees);
         }
 
         // GET: Employees/Details/5
