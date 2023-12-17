@@ -18,7 +18,7 @@ namespace WebApplication4.Controllers
             _context = context;
         }
         // GET: Report
-        public async Task<IActionResult> Index(DateTime? selectedDate, int page = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(DateTime? selectedDate, int page = 1, int pageSize = 5)
         {
             ViewBag.DateSortParam = "Date";
             var data = _context.Attds.AsQueryable();

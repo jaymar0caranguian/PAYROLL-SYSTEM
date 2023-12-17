@@ -12,6 +12,7 @@
             <img src="~/payroll-logo.png" alt="Logo" style="width: 150px; height: 100px; background:#1C1C39; margin-bottom:1em;border-radius:100%;" />
             <form asp-action="Edit" class="bg-transparent">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="AttdId" />
 
                 <div class="form-group">
                     <label asp-for="Date" class="control-label">Attendance Date</label>
@@ -51,15 +52,18 @@
                     <input asp-for="nd" class="form-control bg-transparent border border-dark shadow-none" />
                     <span asp-validation-for="nd" class="text-danger"></span>
                 </div>
-            </form>
+
                 <br />
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary" />
                     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-                </div>      
-        </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

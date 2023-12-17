@@ -21,7 +21,7 @@ namespace WebApplication4.Controllers
         // GET: SysAccs
         public async Task<IActionResult> Index(int? page)
         {
-            int pageSize = 8; // Set your desired page size
+            int pageSize = 5; // Set your desired page size
             int pageNumber = page ?? 1;
 
             var sysAccs = await _context.SysAccs

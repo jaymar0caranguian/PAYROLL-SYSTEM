@@ -21,7 +21,7 @@ namespace WebApplication4.Controllers
         // GET: Attds
         public ActionResult Index(int? page)
         {
-            int pageSize = 8; // Set your desired page size
+            int pageSize = 5; // Set your desired page size
             int pageNumber = (page ?? 1);
 
             var attds = _context.Attds.OrderBy(a => a.Date)
