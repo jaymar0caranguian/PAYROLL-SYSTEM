@@ -19,7 +19,7 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index(int page = 1, int pageSize = 8)
+        public async Task<IActionResult> Index(int page = 1, int pageSize = 5)
         {
             // Calculate total number of pages
             var totalCount = await _context.Employee.CountAsync();
